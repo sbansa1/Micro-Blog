@@ -1,5 +1,7 @@
 from flask import Flask
+from flask_bootstrap import Bootstrap
 from flask_mail import Mail
+from flask_moment import Moment
 
 from app.config import Config
 from flask_sqlalchemy import SQLAlchemy
@@ -16,7 +18,8 @@ app.config.from_object(Config)
 db = SQLAlchemy(app)
 migrate = Migrate(app,db)
 mail = Mail(app)
-
+bootstrap = Bootstrap(app)
+moment = Moment(app)
 
 from app import routes
 from app import model, errors

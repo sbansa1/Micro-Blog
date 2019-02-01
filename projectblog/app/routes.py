@@ -26,7 +26,7 @@ def index():
         flash("Your post is now Live !")
         return redirect(url_for('index'))
     #user = {'username': "Miguel"}
-    posts = current_user.followed_posts().all()
+    #posts = current_user.followed_posts().all()
     page = request.args.get('page', 1, type=int)
     posts = current_user.followed_posts().paginate(page,app.config["POSTS_PER_PAGE"],False)
     next_url = url_for('index', page=posts.next_num) \
@@ -156,13 +156,13 @@ def unfollow(username):
     return redirect(url_for('user', username=username))
 
 
-@app.route('/reset_password_request', methods=['GET', 'POST'])
-def reset_password():
+@app.route("/reset_password_request", methods=['GET', 'POST'])
+def reset_password_request():
     if current_user.is_authenticated:
         return redirect(url_for("index"))
     form = ResetPasswordRequestForm()
     if form.validate_on_submit():
-        user = User.query.filter_by(form.email.data).first()
+        user = User.query.filter_by(email=form.email.data).first()
         if user is not None:
             send_password_reset_mail(user)
         flash("Check your email for the instructions to reset your password")
