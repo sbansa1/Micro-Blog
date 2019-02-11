@@ -11,6 +11,7 @@ from flask_login import LoginManager
 import logging
 from logging.handlers import SMTPHandler, RotatingFileHandler
 import os
+
 app = Flask(__name__)
 login = LoginManager(app)
 login.login_view = 'login'
