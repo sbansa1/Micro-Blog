@@ -1,4 +1,4 @@
-2019-02-14 07:20:12,892 ERROR: Exception on / [GET] [in /Users/saurabhbansal/projectblog/venv/lib/python3.7/site-packages/flask/app.py:1761]
+2019-02-14 07:17:32,207 ERROR: Exception on / [GET] [in /Users/saurabhbansal/projectblog/venv/lib/python3.7/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/Users/saurabhbansal/projectblog/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -38,14 +38,10 @@ Traceback (most recent call last):
     {%- block html %}
   File "/Users/saurabhbansal/projectblog/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
     {% block body -%}
-  File "/Users/saurabhbansal/projectblog/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
-    {% block content -%}
-  File "/Users/saurabhbansal/projectblog/app/templates/base.html", line 48, in block "content"
-    {% block app_content %}{% endblock %}
-  File "/Users/saurabhbansal/projectblog/app/templates/index.html", line 27, in block "app_content"
-    {% include '_post.html' %}
-  File "/Users/saurabhbansal/projectblog/app/templates/_post.html", line 10, in top-level template code
-    <td><a href = "{{url_for('user', username = post.author.username)}}">
+  File "/Users/saurabhbansal/projectblog/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 21, in block "body"
+    {% block navbar %}
+  File "/Users/saurabhbansal/projectblog/app/templates/base.html", line 15, in block "navbar"
+    <a href="{{url_for('index')}}">Home</a>
   File "/Users/saurabhbansal/projectblog/venv/lib/python3.7/site-packages/flask/helpers.py", line 356, in url_for
     return appctx.app.handle_url_build_error(error, endpoint, values)
   File "/Users/saurabhbansal/projectblog/venv/lib/python3.7/site-packages/flask/app.py", line 2061, in handle_url_build_error
@@ -56,8 +52,8 @@ Traceback (most recent call last):
     force_external=external)
   File "/Users/saurabhbansal/projectblog/venv/lib/python3.7/site-packages/werkzeug/routing.py", line 1776, in build
     raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'user' with values ['username']. Did you mean 'main.user' instead?
-2019-02-14 07:20:12,933 ERROR: Exception on / [GET] [in /Users/saurabhbansal/projectblog/venv/lib/python3.7/site-packages/flask/app.py:1761]
+werkzeug.routing.BuildError: Could not build url for endpoint 'index'. Did you mean 'main.index' instead?
+2019-02-14 07:17:32,286 ERROR: Exception on / [GET] [in /Users/saurabhbansal/projectblog/venv/lib/python3.7/site-packages/flask/app.py:1761]
 Traceback (most recent call last):
   File "/Users/saurabhbansal/projectblog/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
     response = self.full_dispatch_request()
@@ -97,14 +93,10 @@ Traceback (most recent call last):
     {%- block html %}
   File "/Users/saurabhbansal/projectblog/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
     {% block body -%}
-  File "/Users/saurabhbansal/projectblog/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
-    {% block content -%}
-  File "/Users/saurabhbansal/projectblog/app/templates/base.html", line 48, in block "content"
-    {% block app_content %}{% endblock %}
-  File "/Users/saurabhbansal/projectblog/app/templates/index.html", line 27, in block "app_content"
-    {% include '_post.html' %}
-  File "/Users/saurabhbansal/projectblog/app/templates/_post.html", line 10, in top-level template code
-    <td><a href = "{{url_for('user', username = post.author.username)}}">
+  File "/Users/saurabhbansal/projectblog/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 21, in block "body"
+    {% block navbar %}
+  File "/Users/saurabhbansal/projectblog/app/templates/base.html", line 15, in block "navbar"
+    <a href="{{url_for('index')}}">Home</a>
   File "/Users/saurabhbansal/projectblog/venv/lib/python3.7/site-packages/flask/helpers.py", line 356, in url_for
     return appctx.app.handle_url_build_error(error, endpoint, values)
   File "/Users/saurabhbansal/projectblog/venv/lib/python3.7/site-packages/flask/app.py", line 2061, in handle_url_build_error
@@ -115,4 +107,5 @@ Traceback (most recent call last):
     force_external=external)
   File "/Users/saurabhbansal/projectblog/venv/lib/python3.7/site-packages/werkzeug/routing.py", line 1776, in build
     raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'user' with values ['username']. Did you mean 'main.user' instead?
+werkzeug.routing.BuildError: Could not build url for endpoint 'index'. Did you mean 'main.index' instead?
+2019-02-14 07:19:16,839 INFO: Microblog startup [in /Users/saurabhbansal/projectblog/app/__init__.py:74]
