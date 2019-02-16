@@ -1,46 +1,17 @@
-{%extends "base.html" %}
+{% extends 'base.html' %}
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
-<h1>{{ _('Sign in') }} </h1>
-
-<!--<form action="" method="post" novalidate>
-    {{ form.hidden_tag() }}
-    <p>
-        {{form.username.label}}<br>
-        {{ form.username(size=32) }}
-        {% for errors in form.username.errors %}
-        <span style="color: red;">[{{errors}}]</span>
-        {%endfor%}
-    </p>
-    <p>
-        {{form.password.label}}<br>
-        {{ form.password(size=32) }}
-        {%for errors in form.username.errors %}
-        <span style="color: red;">[{{errors}}]</span>
-        {%endfor%}
-    </p>
-
-    <p>{{form.remember_me()}} {{form.remember_me.label}}</p>
-    <p>{{form.submit()}}</p>
-
-
-<p>
-        Forgot Your Password?
-        <a href="{{ url_for('reset_password_request') }}">Click to Reset It</a>
-    </p>
-
-
-</form>-->
-<div class="row">
+    <h1>{{ _('Sign In') }}</h1>
+    <div class="row">
         <div class="col-md-4">
-            {{wtf.quick_form(form)}}
-
+            {{ wtf.quick_form(form) }}
         </div>
-</div>
-<br>
-<p>{{ _('Forgot Your Password?') }}</p>p
-    <a href="{{ url_for('reset_password_request') }}">{{ _('Click to Reset It') }}</a></p>
-            <p>{{ _('New User?') }}<a href ="{{url_for('registration')}}">{{ _('Click to Register') }}</a></p>
-
-{%endblock%}
+    </div>
+    <br>
+    <p>{{ _('New User?') }} <a href="{{ url_for('auth.register') }}">{{ _('Click to Register!') }}</a></p>
+    <p>
+        {{ _('Forgot Your Password?') }}
+        <a href="{{ url_for('auth.reset_password_request') }}">{{ _('Click to Reset It') }}</a>
+    </p>
+{% endblock %}
